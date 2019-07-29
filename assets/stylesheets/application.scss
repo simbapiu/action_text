@@ -1,10 +1,10 @@
+$bg-color: #fafbfe;
+
 @mixin box-shadow($property) {
   -webkit-box-shadow: $property;
   -moz-box-shadow: $property;
   box-shadow: $property;
 }
-
-$bg-color: #fafbfe;
 
 body {
   background-color: $bg-color;
@@ -52,7 +52,6 @@ body {
     }
 
     .episode{
-      height: 120px;
       .date {
         padding: 30px 0;
         float: left;
@@ -97,6 +96,12 @@ body {
       }
     }
 
+    .episode-text.clearfix::before, ::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
     .episode-text {
       height: 210px;
       color: #6c7686;
@@ -106,9 +111,8 @@ body {
     }
 
     .tags {
-      height: 120px;
+      margin-bottom: 35px;
       ul {
-        width: auto;
         padding: 0 50px 0 0;
         margin: 0;
         li {
@@ -158,7 +162,7 @@ body {
       }
 
       .episode {
-        height: 50px;
+        padding-bottom: 10px;
 
         .date {
           padding: 10px 0;
@@ -171,10 +175,6 @@ body {
 
       .episode-text {
         height: 100px;
-      }
-
-      .tags {
-        height: 70px;
       }
 
       .resource {
