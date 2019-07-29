@@ -1,0 +1,185 @@
+@mixin box-shadow($property) {
+  -webkit-box-shadow: $property;
+  -moz-box-shadow: $property;
+  box-shadow: $property;
+}
+
+$bg-color: #fafbfe;
+
+body {
+  background-color: $bg-color;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+.container {
+  width: 355px;
+  height: 850px;
+  margin: auto;
+
+  .container-title {
+    height: 125px;
+    padding: 15px 0;
+
+    .general-title {
+      height: 20px;
+      color: #6c7686;
+      h4{
+        margin: 0;
+        font-weight: normal;
+      }
+    }
+
+    .title {
+      height: 60px;
+      color: #343a40;
+      h1 {
+        margin: 0 100px 0 0;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .description {
+    height: 610px;
+    background-color: #FFF;
+    border-radius: 3px;
+    @include box-shadow(0px -2px 15px 0px rgba(0,0,0,0.1));
+
+    .description-container {
+      margin: auto;
+      width: 315px;
+    }
+
+    .episode{
+      height: 120px;
+      .date {
+        padding: 30px 0;
+        float: left;
+        color: #6c7686;
+        font-size: 16px;
+      }
+
+      .bookmark {
+        float: right;
+        color: #343a40;
+        font-size: 14px;
+        background-color: $bg-color;
+        border-radius: 2px;
+        width: 197px;
+        height: 38px;
+
+        .bookmark-text {
+          float: left;
+          padding: 12px 10px 11px 10px;
+        }
+
+        .bookmark-icon {
+          float: left;
+          padding: 12px 15px 11px 15px;
+        }
+
+        div:hover {
+          background-color: #d7e0fc;
+          border: solid 1px #b4c5fc;
+          border-radius: 2px;
+          height: 15px;
+        }
+
+        .bookmark-text:hover {
+          padding: 11px 9px 10px 9px;
+        }
+
+        .bookmark-icon:hover {
+          padding: 11px 14px 10px 14px;
+        }
+
+      }
+    }
+
+    .episode-text {
+      height: 210px;
+      color: #6c7686;
+      font-size: 15px;
+      line-height: 200%;
+      padding-bottom: 10px;
+    }
+
+    .tags {
+      height: 120px;
+      ul {
+        width: auto;
+        padding: 0 50px 0 0;
+        margin: 0;
+        li {
+          border-radius: 25px;
+          background-color: Background;
+          list-style: none;
+          padding: 10px 15px;
+          margin: 4px 2px;
+          float: left;
+          color: #0027f3;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .resource {
+      padding: 30px 0;
+      box-shadow: 0 -2px 0 0 $bg-color;
+      h1 {
+        margin: 0;
+        font-weight: lighter;
+      }
+
+      ul {
+        li {
+          color: #6c5ce7;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 376px) {
+    width: 780px;
+
+    .container-title{
+      height: 60px;
+      padding: 20px 0;
+    }
+
+    .description {
+      padding: 20px;
+      margin: 0;
+      width: 740px;
+      height: 370px;
+
+      .description-container {
+        width: 740px;
+      }
+
+      .episode {
+        height: 50px;
+
+        .date {
+          padding: 10px 0;
+        }
+
+        .bookmark {
+          margin: 0 5px 0 0;
+        }
+      }
+
+      .episode-text {
+        height: 100px;
+      }
+
+      .tags {
+        height: 70px;
+      }
+
+      .resource {
+        padding: 25px 0;
+      }
+    }
+  }
+}
